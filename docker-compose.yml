@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  tensor:
+    image: tensorflow/tensorflow:latest-gpu-py3
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+    volumes:
+      - ./src:/notebooks
+      - ./input:/input
+    ports:
+      - 8888:8888
